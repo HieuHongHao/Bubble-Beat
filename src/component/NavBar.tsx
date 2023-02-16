@@ -1,0 +1,36 @@
+import { Flex, Spacer, Button, Avatar } from "@chakra-ui/react";
+import {IoLogOut} from "react-icons/io5"
+import { signOut} from "next-auth/react";
+import { UserContext } from "@/context/UserContext";
+import { useContext } from "react";
+import Notification from "./Notification";
+import FriendList from "./FriendList";
+
+export default function NavBar() {
+  const session = useContext(UserContext);
+  return (
+    <Flex
+      minWidth={"max-content"}
+      ml={"100px"}
+      direction={"row"}
+      alignItems={"center"}
+      gap={"7"}
+      height={"50px"}
+      pl="-2"
+    >
+      <Notification/>
+      <FriendList/>
+      <Spacer />
+      <Avatar name={session?.data?.user?.name!} src={session?.data?.user?.image!} mr="10px"></Avatar>
+      <Button
+        onClick={() => signOut({ callbackUrl: "http://localhost:3000" })}
+        variant="solid"
+        colorScheme="linkedin"
+        mr="10px"
+        leftIcon={<IoLogOut/>}
+      >
+        Sign out
+      </Button>
+    </Flex>
+  );
+}
