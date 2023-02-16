@@ -8,6 +8,7 @@ import { Session, User } from "next-auth";
 
 
 
+
 export const authOptions: AuthOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -40,7 +41,7 @@ export const authOptions: AuthOptions = {
       return session;
     },
   },
-  secret: process.env.SECRET
+  secret: process.env.NEXTAUTH_SECRET
 };
 
 
