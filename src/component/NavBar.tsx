@@ -5,6 +5,7 @@ import { UserContext } from "@/context/UserContext";
 import { useContext } from "react";
 import Notification from "./Notification";
 import FriendList from "./FriendList";
+import { URL } from "@/url";
 
 export default function NavBar() {
   const session = useContext(UserContext);
@@ -23,7 +24,7 @@ export default function NavBar() {
       <Spacer />
       <Avatar name={session?.data?.user?.name!} src={session?.data?.user?.image!} mr="10px"></Avatar>
       <Button
-        onClick={() => signOut({ callbackUrl: "http://localhost:3000" })}
+        onClick={() => signOut({ callbackUrl: URL })}
         variant="solid"
         colorScheme="linkedin"
         mr="10px"
