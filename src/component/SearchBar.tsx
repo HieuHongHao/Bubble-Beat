@@ -12,6 +12,7 @@ export default function SearchBar({
     <Card m="10px" ml="20px" borderRadius={"10px"}>
       <InputGroup>
         <InputLeftElement
+          // eslint-disable-next-line react/no-children-prop
           children={<SearchIcon />}
           pointerEvents="none"
           mt="5px"
