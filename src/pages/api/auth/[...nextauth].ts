@@ -6,6 +6,8 @@ import prisma from "../../../db";
 import { JWT } from "next-auth/jwt";
 import { Session, User } from "next-auth";
 
+
+
 export const authOptions: AuthOptions = {
   // Configure one or more authentication providers
   providers: [
