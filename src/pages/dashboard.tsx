@@ -19,7 +19,7 @@ export default function Dashboard() {
         colSpan={1}
         borderRadius={"8px"}
         bg={"#3B4252"}
-        mt="90px"
+        mt="115px"
         ml="15px"
         minHeight="1000px"
         maxHeight="1000px"
@@ -53,7 +53,7 @@ export default function Dashboard() {
         overflow={"auto"}
         maxHeight="1000px"
       >
-        {[1, 2, 3, 4].map((id) => {
+        {[1, 2, 3, 4, 5].map((id) => {
           return <Song key={id} />;
         })}
       </GridItem>

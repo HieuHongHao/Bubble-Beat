@@ -70,7 +70,7 @@ export default function Login() {
               leftIcon={<ImGithub />}
               paddingLeft={"-1.5"}
               maxWidth="500px"
-            >
+              >
               Sign in with Github
             </Button>
           </Stack>

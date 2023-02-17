@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { SearchSpace, SearchSpaceReducer, SearchAction } from "@/types/index";
 import { fetchUsers } from "@/utility/friendAPI";
 
+
+
 const reducer: SearchSpaceReducer = (
   state: SearchSpace,
   action: SearchAction
