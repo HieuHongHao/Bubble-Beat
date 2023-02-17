@@ -8,6 +8,7 @@ export default async function handler(
   res: NextApiResponse<User[]>
 ) {
   const searchQuery = req.query.searchQuery as string;
+  
   const users = (await prisma.user.findMany({
     where: {
       name: {

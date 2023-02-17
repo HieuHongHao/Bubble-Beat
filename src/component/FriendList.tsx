@@ -33,19 +33,18 @@ function FriendProfile({
   dispatch: Dispatch<SearchAction>;
   isFriend: boolean;
 }) {
-  const session = useContext(UserContext);
   return (
     <Flex>
-      <Avatar src={profile.image!} />
+      <Avatar src={profile.image!} name={profile.name!}/>
       <Box ml="3" w="300px">
-        <HStack>  
+        <HStack>
           <Text fontWeight="bold">{profile.name}</Text>
           {isFriend ? (
             <Button size="xs" variant={"solid"}>
               Add
             </Button>
           ) : (
-            <Button size="xs" variant={"solid"} onClick={() => session?.data?.user?.name!="Shrek"}>
+            <Button size="xs" variant={"solid"}>
               Remove
             </Button>
           )}

@@ -1,19 +1,14 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import { SessionContext } from "@/types";
-import { Session } from "next-auth";
-
+import { CustomUserSession } from "@/types";
 export default function useUser(): [
-  SessionContext,
-  Dispatch<SetStateAction<SessionContext>>
+  CustomUserSession,
+  Dispatch<SetStateAction<CustomUserSession>>
 ] {
   const session = useSession();
-  const [user, setUser] = useState<ReturnType<typeof useSession>>();
-  useEffect(() => {
-    setUser(session);
-  }, [session]);
+  const [customUserSession, setCustomUserSession] = useState<CustomUserSession>(session);
   return [
-    user as SessionContext,
-    setUser as Dispatch<SetStateAction<SessionContext>>,
+    customUserSession as CustomUserSession,
+    setCustomUserSession as Dispatch<SetStateAction<CustomUserSession>>,
   ];
 }
