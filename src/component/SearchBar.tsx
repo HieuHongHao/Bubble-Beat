@@ -1,6 +1,6 @@
 import { Card, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { SearchBarProps } from "@/types";
+import { SearchBarProps } from "@/types/menu";
 
 export default function SearchBar({
   backgroundColor,

@@ -1,8 +1,6 @@
 import { ReactNode, createContext } from "react";
-import type { SessionContext } from "@/types";
+import type { SessionContext } from "@/types/session";
 import useUser from "@/hooks/useUser";
-
-
 
 
 

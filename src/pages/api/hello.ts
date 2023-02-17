@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '@/db'
 import { getSession } from 'next-auth/react'
-import { UserWithFriends } from '@/types';
+import { UserWithFriends } from '@/types/menu';
 
 
 

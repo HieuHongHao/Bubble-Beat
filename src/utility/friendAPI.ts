@@ -1,4 +1,4 @@
-import { User, SearchAction } from "@/types/index";
+import { User, SearchAction } from "@/types/menu";
 import { URL } from "@/url";
 import { Dispatch } from "react";
 
