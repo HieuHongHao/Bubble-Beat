@@ -27,7 +27,7 @@ function IconItem({ itemName }: { itemName: string }) {
   }
 }
 
-export default function LeftCol() {
+export default function SideBar() {
   const [active, setActive] = useState("Popular Songs");
   return (
     <Flex direction="column" gap={"5"} justifyContent="space-between">
