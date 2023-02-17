@@ -5,7 +5,7 @@ import { RiNumbersFill } from "react-icons/ri";
 import { GiLoveSong } from "react-icons/gi";
 import { FcMusic } from "react-icons/fc";
 import { BsFillDoorOpenFill } from "react-icons/bs";
-import { MenuItem } from "@/types";
+import { MenuItem } from "@/types/menu";
 
 const MenuItems: MenuItem[] = [
   { name: "Popular Songs", colorScheme: "purple" },

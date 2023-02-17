@@ -21,8 +21,9 @@ import SearchBar from "./SearchBar";
 
 import useFriends from "@/hooks/useFriends";
 import { ChangeEventHandler, Dispatch, useContext } from "react";
-import { SearchAction, SearchSpace, User } from "@/types";
-import { UserContext } from "@/context/UserContext";
+import { SearchAction, SearchSpace} from "@/types/search";
+import {User} from "@/types/user"
+
 
 function FriendProfile({
   profile,

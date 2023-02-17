@@ -1,7 +1,7 @@
 import { UserContext } from "@/context/UserContext";
 import { useReducer, useContext, Dispatch, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { SearchSpace, SearchSpaceReducer, SearchAction, SessionContext } from "@/types/index";
+import { SearchSpace, SearchSpaceReducer, SearchAction} from "@/types/search";
 import { fetchUsers } from "@/utility/friendAPI";
 
 
