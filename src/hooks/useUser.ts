@@ -10,9 +10,7 @@ export default function useUser(): [
   const session = useSession();
   const [user, setUser] = useState<ReturnType<typeof useSession>>();
   useEffect(() => {
-    if (session.status === "authenticated") {
-      setUser(session);
-    }
+    setUser(session);
   }, [session]);
   return [
     user as SessionContext,
