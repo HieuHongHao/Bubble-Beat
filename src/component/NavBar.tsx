@@ -8,7 +8,7 @@ import FriendList from "./FriendList";
 import { URL } from "@/url";
 
 export default function NavBar() {
-  const session = useContext(UserContext);
+  const {customUserSession} = useContext(UserContext);
   return (
     <Flex
       minWidth={"max-content"}
@@ -22,7 +22,7 @@ export default function NavBar() {
       <Notification/>
       <FriendList/>
       <Spacer />
-      <Avatar name={session?.data?.user?.name!} src={session?.data?.user?.image!} mr="10px"></Avatar>
+      <Avatar name={customUserSession.data?.user?.name!} src={customUserSession.data?.user?.image!} mr="10px"></Avatar>
       <Button
         onClick={() => signOut({ callbackUrl: URL })}
         variant="solid"

@@ -6,14 +6,22 @@ import useUser from "@/hooks/useUser";
 
 
 
-export const UserContext = createContext<SessionContext>(null);
+const defaultSessionValue : SessionContext = {
+    customUserSession:{
+        data:null,
+        status: "unauthenticated"
+    },
+    setCustomUserSession: (c) => {}
+}
+
+export const UserContext = createContext<SessionContext>(defaultSessionValue);
 
 
 
 export function UserProvider({children} : {children: ReactNode}){
-    const [user,setUser] = useUser();
+    const [customUserSession,setCustomUserSession] = useUser();
     return (
-        <UserContext.Provider value={user}>
+        <UserContext.Provider value={{customUserSession,setCustomUserSession}}>
             {children}
         </UserContext.Provider>
     )

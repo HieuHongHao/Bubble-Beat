@@ -1,7 +1,7 @@
 import { UserContext } from "@/context/UserContext";
 import { useReducer, useContext, Dispatch, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { SearchSpace, SearchSpaceReducer, SearchAction } from "@/types/index";
+import { SearchSpace, SearchSpaceReducer, SearchAction, SessionContext } from "@/types/index";
 import { fetchUsers } from "@/utility/friendAPI";
 
 
@@ -27,8 +27,9 @@ const reducer: SearchSpaceReducer = (
   }
 };
 
+
+
 export default function useFriends(): [SearchSpace, Dispatch<SearchAction>] {
-  const session = useContext(UserContext);
   const { status, data } = useQuery({
     queryKey: ["usersWithFriends"],
     queryFn: fetchUsers,
@@ -38,17 +39,19 @@ export default function useFriends(): [SearchSpace, Dispatch<SearchAction>] {
     searchResults: [],
     query: "",
   });
+  const {customUserSession} = useContext(UserContext);
   useEffect(() => {
-    if (status === "success" && session?.status === "authenticated") {
+    if (status === "success" && customUserSession.status === "authenticated") {
       dispatch({
         type: "init",
         payload: {
-          friends: session?.data?.user?.friendWith!,
+          friends: customUserSession.data?.user?.friendWith!,
           searchResults: data,
           query: "",
         },
       });
     }
-  }, [status, session?.status, session?.data?.user?.friendWith, data]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, customUserSession]);
   return [searchSpace, dispatch];
 }
