@@ -12,7 +12,7 @@ const reducer: SearchSpaceReducer = (
 ) => {
   switch (action.type) {
     case "init":
-      const { friends,searchResults,query } = action.payload as SearchSpace;
+      const { friends,searchResults, query } = action.payload as SearchSpace;
       return {
         searchResults,
         friends,
@@ -49,6 +49,6 @@ export default function useFriends(): [SearchSpace, Dispatch<SearchAction>] {
         },
       });
     }
-  }, [status, session?.status]);
+  }, [status, session?.status, session?.data?.user?.friendWith, data]);
   return [searchSpace, dispatch];
 }

@@ -4,8 +4,6 @@ import LeftCol from "@/component/LeftCol";
 import SearchBar from "@/component/SearchBar";
 import Song from "@/component/Song";
 
-
-
 export default function Dashboard() {
   return (
     <Grid
@@ -24,7 +22,7 @@ export default function Dashboard() {
         minHeight="1000px"
         maxHeight="1000px"
       >
-        <LeftCol/>
+        <LeftCol />
       </GridItem>
       <GridItem
         rowSpan={1}
@@ -50,10 +48,11 @@ export default function Dashboard() {
         bg="#3B4252"
         borderRadius={"8px"}
         mt="1px"
+        mr="30px"
         overflow={"auto"}
         maxHeight="1000px"
       >
-        {[1, 2, 3, 4, 5].map((id) => {
+        {[1, 2, 3, 4, 5, 6].map((id) => {
           return <Song key={id} />;
         })}
       </GridItem>

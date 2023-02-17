@@ -10,7 +10,6 @@ export async function fetchUsers(): Promise<User[]> {
 
 
 
-
 export async function addsFriend(
   id: string,
   dispatch: Dispatch<SearchAction>

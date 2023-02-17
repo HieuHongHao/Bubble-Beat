@@ -20,8 +20,9 @@ import { IoPeople } from "react-icons/io5";
 import SearchBar from "./SearchBar";
 
 import useFriends from "@/hooks/useFriends";
-import { ChangeEventHandler, Dispatch } from "react";
+import { ChangeEventHandler, Dispatch, useContext } from "react";
 import { SearchAction, SearchSpace, User } from "@/types";
+import { UserContext } from "@/context/UserContext";
 
 function FriendProfile({
   profile,
@@ -32,6 +33,7 @@ function FriendProfile({
   dispatch: Dispatch<SearchAction>;
   isFriend: boolean;
 }) {
+  const session = useContext(UserContext);
   return (
     <Flex>
       <Avatar src={profile.image!} />
@@ -43,7 +45,7 @@ function FriendProfile({
               Add
             </Button>
           ) : (
-            <Button size="xs" variant={"solid"}>
+            <Button size="xs" variant={"solid"} onClick={() => session?.data?.user?.name!="Shrek"}>
               Remove
             </Button>
           )}
