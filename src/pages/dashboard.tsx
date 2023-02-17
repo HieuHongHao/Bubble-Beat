@@ -1,6 +1,6 @@
 import { Grid, GridItem, Spacer } from "@chakra-ui/react";
 import NavBar from "@/component/NavBar";
-import LeftCol from "@/component/LeftCol";
+import SideBar from "@/component/SideBar";
 import SearchBar from "@/component/SearchBar";
 import Song from "@/component/Song";
 import { UserProvider } from "@/context/UserContext";
@@ -24,7 +24,7 @@ export default function Dashboard() {
           minHeight="1000px"
           maxHeight="1000px"
         >
-          <LeftCol />
+          <SideBar />
         </GridItem>
         <GridItem
           rowSpan={1}
