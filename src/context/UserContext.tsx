@@ -1,5 +1,4 @@
 import { ReactNode, createContext } from "react";
-import { useSession } from "next-auth/react";
 import type { SessionContext } from "@/types";
 import useUser from "@/hooks/useUser";
 

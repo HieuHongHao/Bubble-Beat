@@ -15,9 +15,10 @@ export default function App({
   <SessionProvider session={session}>
       <ChakraProvider>
         <QueryClientProvider client={queryClient}>
-          <UserProvider>
+          {/* <UserProvider>
             <Component {...pageProps} />
-          </UserProvider>
+          </UserProvider> */}
+          <Component {...pageProps} />
         </QueryClientProvider>
       </ChakraProvider>
     </SessionProvider>
