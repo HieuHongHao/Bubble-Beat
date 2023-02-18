@@ -12,11 +12,18 @@ export type SearchSpace = {
   searchResults: User[];
   query: string;
 };
-export type SearchAction = {
-  type: string;
-  payload: User[] | SearchSpace;
+
+export type Init = {
+  type: "init";
+  payload: User[] | SearchSpace
+}
+
+export type AddFriend = {
+  type: "addFriend",
   friendId: string
-};
+}
+
+export type SearchAction = Init | AddFriend
 export type SearchSpaceReducer = (
   state: SearchSpace,
   action: SearchAction
