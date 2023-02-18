@@ -8,7 +8,6 @@ import { Session, User } from "next-auth";
 
 
 
-
 export const authOptions: AuthOptions = {
   // Configure one or more authentication providers
   providers: [

@@ -18,11 +18,11 @@ import {
 } from "@chakra-ui/react";
 import { IoPeople } from "react-icons/io5";
 import SearchBar from "./SearchBar";
-
-import useFriends from "@/hooks/useFriends";
-import { ChangeEventHandler, Dispatch, useContext } from "react";
-import { SearchAction, SearchSpace } from "@/types/search";
+import { Dispatch } from "react";
+import { SearchAction } from "@/types/search";
 import { User } from "@/types/user";
+import useFriends from "@/hooks/useFriends";
+import { addFriend } from "@/utility/friendAPI";
 
 function Profile({
   profile,
@@ -33,15 +33,25 @@ function Profile({
   dispatch: Dispatch<SearchAction>;
   isFriend: boolean;
 }) {
-  const handleAddFriend = (id: string) => {};
+  const handleAddFriend = async (id: string) => {
+    await addFriend(id);
+    dispatch({
+      type: "addFriend",
+      friendId: id,
+    });
+  };
   return (
     <Flex>
       <Avatar src={profile.image!} name={profile.name!} />
       <Box ml="3" w="300px">
         <HStack>
           <Text fontWeight="bold">{profile.name}</Text>
-          {isFriend ? (
-            <Button size="xs" variant={"solid"}>
+          {!isFriend ? (
+            <Button
+              size="xs"
+              variant={"solid"}
+              onClick={() => handleAddFriend(profile.id)}
+            >
               Add
             </Button>
           ) : (
@@ -99,19 +109,19 @@ export default function FriendList() {
             <Heading as="h3" size="md" textColor="#2E3440">
               Friends
             </Heading>
-            {/* <Stack>
+          </Center>
+          <Stack>
             {searchSpace.friends.map((result) => {
               return (
                 <Profile
                   profile={result}
                   dispatch={dispatch}
                   key={result.id}
-                  isFriend={result.name! in searchSpace.friends}
+                  isFriend={true}
                 />
               );
             })}
-          </Stack> */}
-          </Center>
+          </Stack>
         </PopoverBody>
       </PopoverContent>
     </Popover>
