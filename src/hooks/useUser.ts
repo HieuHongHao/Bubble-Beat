@@ -7,7 +7,6 @@ export default function useUser(): [
 ] {
   const session = useSession();
   const [customUserSession, setCustomUserSession] = useState<CustomUserSession>(session);
-  console.log("useUser",session);
   useEffect(() => {
     setCustomUserSession(session)
   }, [session])
