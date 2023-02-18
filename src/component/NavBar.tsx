@@ -28,7 +28,7 @@ export default function NavBar() {
       <Spacer />
       <Avatar name={customUserSession.data?.user?.name!} src={customUserSession.data?.user?.image!} mr="10px"></Avatar>
       <Button
-        onClick={() => signOut({ callbackUrl: URL })}
+        onClick={handleLogOut}
         variant="solid"
         colorScheme="linkedin"
         mr="10px"
