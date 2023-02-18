@@ -15,8 +15,13 @@ export default async function handler(
       },
     });
     res.json(user as User);
-  }
-  else if(req.method === "POST"){
+  } else if (req.method === "POST") {
     const updateBody = req.body;
+    await prisma.user.update({
+      where: {
+        id: userId as string,
+      },
+      data: updateBody
+    });
   }
 }

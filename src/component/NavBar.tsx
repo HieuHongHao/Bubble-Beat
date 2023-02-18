@@ -8,7 +8,11 @@ import FriendList from "./FriendList";
 import { URL } from "@/url";
 
 export default function NavBar() {
-  const {customUserSession} = useContext(UserContext);
+  const {customUserSession,setCustomUserSession} = useContext(UserContext);
+  function handleLogOut() {
+    setCustomUserSession({data:null,status:"unauthenticated"});
+    signOut({ callbackUrl: URL }) 
+  }
   return (
     <Flex
       minWidth={"max-content"}
