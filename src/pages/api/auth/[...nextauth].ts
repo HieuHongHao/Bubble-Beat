@@ -31,13 +31,14 @@ export const authOptions: AuthOptions = {
     }) {
       session.user = await prisma.user.findFirst({
         where: {
-          name: session?.user?.name,
+          email: session.user?.email,
         },
         include:{
           friendWith:true,
           friendBy:true
         },
       });
+      
       return session;
     },
   },

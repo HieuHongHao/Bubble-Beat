@@ -8,11 +8,7 @@ import FriendList from "./FriendList";
 import { URL } from "@/url";
 
 export default function NavBar() {
-  const {customUserSession,setCustomUserSession} = useContext(UserContext);
-  function handleLogOut() {
-    setCustomUserSession({data:null,status:"unauthenticated"});
-    signOut({ callbackUrl: URL }) 
-  }
+  const {customUserSession} = useContext(UserContext);
   return (
     <Flex
       minWidth={"max-content"}
@@ -28,7 +24,7 @@ export default function NavBar() {
       <Spacer />
       <Avatar name={customUserSession.data?.user?.name!} src={customUserSession.data?.user?.image!} mr="10px"></Avatar>
       <Button
-        onClick={handleLogOut}
+        onClick={() => signOut({ callbackUrl: URL }) }
         variant="solid"
         colorScheme="linkedin"
         mr="10px"

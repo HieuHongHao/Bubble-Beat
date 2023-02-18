@@ -1,5 +1,5 @@
 import NextAuth from "next-auth"
-import { PrismaUser, UserWithFriends } from "./menu"
+import { UserWithFriends } from "../types/user"
 
 
 
