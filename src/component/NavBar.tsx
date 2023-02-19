@@ -22,7 +22,7 @@ export default function NavBar() {
       <Notification/>
       <FriendList/>
       <Spacer />
-      <Avatar name={customUserSession.data?.user?.name!} src={customUserSession.data?.user?.image!} mr="10px"></Avatar>
+      <Avatar name={customUserSession.data?.user?.name!} src={customUserSession.data?.user?.image!} mr="10px"/>
       <Button
         onClick={() => signOut({ callbackUrl: URL }) }
         variant="solid"

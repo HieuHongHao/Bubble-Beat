@@ -37,7 +37,6 @@ export const authOptions: AuthOptions = {
           friendBy:true
         },
       });
-      
       return session;
     },
   },
