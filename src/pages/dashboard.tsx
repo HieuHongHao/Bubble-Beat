@@ -54,7 +54,7 @@ export default function Dashboard() {
           overflow={"auto"}
           maxHeight="1000px"
         >
-          {[1, 2, 3, 4, 5, 6].map((id) => {
+          {[1,2,3,4,5].map((id) => {
             return <Song key={id} />;
           })}
         </GridItem>

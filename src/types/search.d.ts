@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import { ChangeEventHandler } from "react";
 import { User } from "./user";
 
@@ -27,4 +28,5 @@ export type SearchSpaceReducer = (
   state: SearchSpace,
   action: SearchAction
 ) => SearchSpace;
+
 
