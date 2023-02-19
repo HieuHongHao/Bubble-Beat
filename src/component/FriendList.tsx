@@ -34,11 +34,11 @@ function Profile({
   isFriend: boolean;
 }) {
   const handleAddFriend = async (id: string) => {
-    await addFriend(id);
     dispatch({
       type: "addFriend",
       friendId: id,
     });
+    await addFriend(id);
   };
   return (
     <Flex>
@@ -100,7 +100,7 @@ export default function FriendList() {
                   profile={result}
                   dispatch={dispatch}
                   key={result.id}
-                  isFriend={result.name! in searchSpace.friends}
+                  isFriend={searchSpace.friends.some(friend => friend.name === result.name)}
                 />
               );
             })}

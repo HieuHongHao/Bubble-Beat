@@ -8,6 +8,8 @@ type Error = {
   message: string;
 };
 
+
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<User | Error>

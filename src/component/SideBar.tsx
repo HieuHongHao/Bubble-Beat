@@ -12,7 +12,7 @@ const MenuItems: MenuItem[] = [
   { name: "Rooms", colorScheme: "cyan" },
   { name: "Song Stat", colorScheme: "teal" },
   { name: "Favourite Songs", colorScheme: "pink" },
-  {name: "Test",colorScheme:"red"},
+  { name: "Test", colorScheme: "red" },
 ];
 
 function IconItem({ itemName }: { itemName: string }) {

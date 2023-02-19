@@ -1,16 +1,18 @@
 import { useRouter } from "next/router";
 import Login from "./Login";
 import Loading from "@/component/Loading";
-import { useSession } from "next-auth/react";
+import { useContext } from "react";
+import { UserContext } from "@/context/UserContext";
+
 
 export default function Home() {
-  const session = useSession();
+  const {customUserSession} = useContext(UserContext);
   const router = useRouter();
-  if (session?.status === "authenticated") {
+  if (customUserSession?.status === "authenticated") {
     router.push("dashboard");
     return <Loading/>;
   }
-  if (session?.status === "loading") {
+  if (customUserSession?.status === "loading") {
     return <Loading/>;
   }
   return <Login></Login>;
