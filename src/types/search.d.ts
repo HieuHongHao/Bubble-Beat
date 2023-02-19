@@ -8,6 +8,8 @@ export type SearchBarProps = {
   placeHolderColor: string;
   handler?: ChangeEventHandler<HTMLInputElement>;
 };
+
+
 export type SearchSpace = {
   friends: User[];
   searchResults: User[];
@@ -23,7 +25,8 @@ export type AddFriend = {
   type: "addFriend",
   friendId: string
 }
-export type SearchAction = Init | AddFriend
+export type SearchAction = Init | AddFriend 
+
 export type SearchSpaceReducer = (
   state: SearchSpace,
   action: SearchAction
