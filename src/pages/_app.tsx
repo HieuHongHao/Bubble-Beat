@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import { SessionProvider } from "next-auth/react";
-import { UserProvider } from "@/context/UserContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();

@@ -22,9 +22,9 @@ export type AddFriend = {
   type: "addFriend",
   friendId: string
 }
-
 export type SearchAction = Init | AddFriend
 export type SearchSpaceReducer = (
   state: SearchSpace,
   action: SearchAction
 ) => SearchSpace;
+
