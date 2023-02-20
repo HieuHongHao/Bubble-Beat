@@ -12,8 +12,9 @@ import {
   Stack,
   Image,
   HStack,
-  Flex,
 } from "@chakra-ui/react";
+
+
 
 export default function Song() {
   return (
@@ -32,7 +33,8 @@ export default function Song() {
           alt="pochita-gif"
           objectFit="cover"
           w="300px"
-          h="300px"
+          h="250px"
+          m="10px"
           borderRadius="10px"
         />
         <Stack>
