@@ -1,10 +1,14 @@
 import { UserContext } from "@/context/UserContext";
 import { useReducer, useContext, Dispatch, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { SearchSpace, SearchSpaceReducer, SearchAction, Init, AddFriend } from "@/types/search";
+import {
+  SearchSpace,
+  SearchSpaceReducer,
+  SearchAction,
+  Init,
+  AddFriend,
+} from "@/types/search";
 import { fetchUsers } from "@/utility/friendAPI";
-
-
 
 const reducer: SearchSpaceReducer = (
   state: SearchSpace,
@@ -12,20 +16,22 @@ const reducer: SearchSpaceReducer = (
 ) => {
   switch (action.type) {
     case "init":
-      let {payload} = action as Init;
+      let { payload } = action as Init;
       return {
         friends: (payload as SearchSpace).friends,
         searchResults: (payload as SearchSpace).searchResults,
         query: (payload as SearchSpace).query,
       };
     case "addFriend":
-      let {friendId} = action as AddFriend
-      let friend = state.searchResults.filter(user => user.id === friendId);
-      let nonFriends = state.searchResults.filter(user => user.id !== friendId);
+      let { friendId } = action as AddFriend;
+      let friend = state.searchResults.filter((user) => user.id === friendId);
+      let nonFriends = state.searchResults.filter(
+        (user) => user.id !== friendId
+      );
       return {
         friends: state.friends.concat(friend),
         searchResults: nonFriends,
-        query: state.query
+        query: state.query,
       };
     default:
       return {

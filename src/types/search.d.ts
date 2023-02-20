@@ -9,7 +9,6 @@ export type SearchBarProps = {
   handler?: ChangeEventHandler<HTMLInputElement>;
 };
 
-
 export type SearchSpace = {
   friends: User[];
   searchResults: User[];
@@ -18,18 +17,16 @@ export type SearchSpace = {
 
 export type Init = {
   type: "init";
-  payload: User[] | SearchSpace
-}
+  payload: User[] | SearchSpace;
+};
 
 export type AddFriend = {
-  type: "addFriend",
-  friendId: string
-}
-export type SearchAction = Init | AddFriend 
+  type: "addFriend";
+  friendId: string;
+};
 
+export type SearchAction = Init | AddFriend
 export type SearchSpaceReducer = (
   state: SearchSpace,
   action: SearchAction
 ) => SearchSpace;
-
-

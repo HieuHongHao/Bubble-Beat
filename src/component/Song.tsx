@@ -17,7 +17,7 @@ import {
 
 export default function Song() {
   return (
-    <Card bg="#4C566A" variant="elevated" borderRadius="10px" ml="100px" mr="100px" mt="20px">
+    <Card bg="#4C566A" variant="elevated" borderRadius="10px" ml="100px" mr="100px" mt="30px" mb="10px">
       <CardHeader>
         <Heading textColor="#D8DEE9">Song name</Heading>
         <Stack direction={"row"} mt="5px">
