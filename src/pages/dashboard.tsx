@@ -1,7 +1,6 @@
 import { Grid, GridItem, Spacer, Image } from "@chakra-ui/react";
 import NavBar from "@/component/NavBar";
 import SideBar from "@/component/SideBar";
-import SearchBar from "@/component/SearchBar";
 import Song from "@/component/Song";
 
 
@@ -27,18 +26,11 @@ export default function Dashboard() {
       <GridItem
         rowSpan={1}
         colSpan={1}
-        // bg="#3B4252"
-        // borderRadius={"8px"}
         alignItems="center"
         justifyContent="center"
         display="flex"
         maxHeight="70px"
       >
-        {/* <SearchBar
-          backgroundColor="#D8DEE9"
-          placeHolder="Search for Songs"
-          placeHolderColor="#2E3440"
-        /> */}
         <Spacer />
         <NavBar />
       </GridItem>
