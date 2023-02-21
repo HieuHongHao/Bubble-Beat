@@ -1,4 +1,4 @@
-import { Grid, GridItem, Spacer, Image } from "@chakra-ui/react";
+import { Grid, GridItem, Spacer} from "@chakra-ui/react";
 import NavBar from "@/component/NavBar";
 import SideBar from "@/component/SideBar";
 import Song from "@/component/Song";

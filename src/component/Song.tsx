@@ -15,13 +15,12 @@ import {
 } from "@chakra-ui/react";
 
 
-
 export default function Song() {
   return (
     <Card
       bg="#4C566A"
       variant="elevated"
-      borderRadius="10px"
+      borderRadius="15px"
       ml="100px"
       mr="100px"
       mt="30px"
@@ -82,6 +81,7 @@ export default function Song() {
               >
                 Like
               </Button>
+              
             </Stack>
           </CardFooter>
         </Stack>

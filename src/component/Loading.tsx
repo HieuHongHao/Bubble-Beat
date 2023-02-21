@@ -8,6 +8,7 @@ export default function Loading() {
         alt="pochita-gif"
         w="450px"
         h="300px"
+        borderRadius="10px"
       />
       <Heading textColor="#D8DEE9" mt="40px">
         Loading...

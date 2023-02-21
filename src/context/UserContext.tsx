@@ -11,8 +11,6 @@ const defaultSessionValue: SessionContext = {
 };
 
 export const UserContext = createContext<SessionContext>(defaultSessionValue);
-
-
 export function UserProvider({ children }: { children: ReactNode }) {
   const [customUserSession, setCustomUserSession] = useUser();
   return (
