@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { IoPeople } from "react-icons/io5";
 import SearchBar from "./SearchBar";
-import { Dispatch } from "react";
+import { Dispatch, useState } from "react";
 import { SearchAction } from "@/types/search";
 import { User } from "@/types/user";
 import useFriends from "@/hooks/useFriends";
@@ -100,7 +100,7 @@ export default function FriendList() {
                   profile={result}
                   dispatch={dispatch}
                   key={result.id}
-                  isFriend={searchSpace.friends.some(friend => friend.name === result.name)}
+                  isFriend={searchSpace.friends.some(friend => friend.id === result.id)}
                 />
               );
             })}
