@@ -23,6 +23,8 @@ import { SearchAction } from "@/types/search";
 import { User } from "@/types/user";
 import useFriends from "@/hooks/useFriends";
 import { addFriend } from "@/utility/friendAPI";
+import { useQueryClient } from "@tanstack/react-query";
+
 
 function Profile({
   profile,
@@ -105,12 +107,12 @@ export default function FriendList() {
               );
             })}
           </Stack>
-          <Center mt="10px">
-            <Heading as="h3" size="md" textColor="#2E3440">
+         <Center mt="10px">
+            <Heading as="h3" size="md">
               Friends
             </Heading>
           </Center>
-          <Stack>
+          <Stack mt="10px">
             {searchSpace.friends.map((result) => {
               return (
                 <Profile

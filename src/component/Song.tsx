@@ -7,13 +7,14 @@ import {
   CardBody,
   Text,
   CardFooter,
-  Badge,
+  Tag,
   Button,
   Stack,
   Image,
   HStack,
+  TagLabel,
+  Flex,
 } from "@chakra-ui/react";
-
 
 export default function Song() {
   return (
@@ -33,38 +34,47 @@ export default function Song() {
           objectFit="cover"
           w="300px"
           h="250px"
-          m="10px"
+          m="15px"
           borderRadius="10px"
         />
         <Stack>
           <CardHeader>
             <Heading textColor="#D8DEE9">Song name</Heading>
             <Stack direction={"row"} mt="5px">
-              <Badge
-                borderRadius="5px"
-                variant="subtle"
-                colorScheme="green"
-                fontSize="0.8em"
-              >
-                Pop
-              </Badge>
-              <Badge
-                borderRadius="5px"
-                variant="subtle"
-                colorScheme="cyan"
-                fontSize="0.8em"
-              >
-                Chill
-              </Badge>
+              {[
+                { name: "Pop", color: "teal" },
+                { name: "Chill", color: "cyan" },
+                { name: "Anime", color: "pink" },
+              ].map((tag) => {
+                return (
+                  <Tag
+                    variant="subtle"
+                    colorScheme={tag.color}
+                    size="sm"
+                    minW="50px"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    key={tag.name}
+                  >
+                    <TagLabel>
+                      <Heading size="xs">{tag.name}</Heading>
+                    </TagLabel>
+                  </Tag>
+                );
+              })}
             </Stack>
           </CardHeader>
           <CardBody>
             <Text textColor="#D8DEE9" textAlign="left">
-              This is a test song no cap
+              This is a test song no cap.This is a test song no cap This is a
+              test song no cap This is a test song no cap.This is a test song no
+              cap.This is a test song no cap This is a test song no cap.This is
+              a test song no cap.This is a test song no cap
             </Text>
           </CardBody>
           <CardFooter>
-            <Stack direction="row" gap="3px">
+            <Flex gap="10px">
               <Button
                 bgColor="pink.200"
                 _hover={{
@@ -81,8 +91,7 @@ export default function Song() {
               >
                 Like
               </Button>
-              
-            </Stack>
+            </Flex>
           </CardFooter>
         </Stack>
       </HStack>
