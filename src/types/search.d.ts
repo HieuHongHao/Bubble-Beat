@@ -17,8 +17,9 @@ export type SearchSpace = {
 
 export type Init = {
   type: "init";
-  payload: User[] | SearchSpace;
+  payload: SearchSpace;
 };
+
 
 export type AddFriend = {
   type: "addFriend";

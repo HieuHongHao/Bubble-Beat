@@ -10,7 +10,6 @@ import {
 } from "@/types/search";
 import { fetchUsers } from "@/utility/friendAPI";
 
-
 const reducer: SearchSpaceReducer = (
   state: SearchSpace,
   action: SearchAction
@@ -53,8 +52,7 @@ export default function useFriends(): [SearchSpace, Dispatch<SearchAction>] {
     searchResults: [],
     query: "",
   });
-  const { customUserSession } = useContext(UserContext);
-  
+  const { customUserSession} = useContext(UserContext);
   useEffect(() => {
     if (status === "success" && customUserSession.status === "authenticated") {
       dispatch({

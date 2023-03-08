@@ -9,7 +9,7 @@ export default function Home() {
   const {customUserSession} = useContext(UserContext);
   const router = useRouter();
   if (customUserSession?.status === "authenticated") {
-    router.push("dashboard");
+    router.push("Dashboard");
     return <Loading/>;
   }
   if (customUserSession?.status === "loading") {

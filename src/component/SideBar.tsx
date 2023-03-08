@@ -1,4 +1,4 @@
-import { Flex, Icon, HStack, Button, Text, useQuery } from "@chakra-ui/react";
+import { Flex, Icon, HStack, Button, Text} from "@chakra-ui/react";
 import { useState } from "react";
 import { HiMusicNote } from "react-icons/hi";
 import { RiNumbersFill } from "react-icons/ri";
@@ -27,6 +27,8 @@ function IconItem({ itemName }: { itemName: string }) {
       return <GiLoveSong />;
   }
 }
+
+
 
 export default function SideBar() {
   const [active, setActive] = useState("Popular Songs");

@@ -1,9 +1,8 @@
 import { User } from "@/types/user";
-import { URL } from "@/url";
 import { API } from "./api";
 
-export async function fetchUsers(): Promise<User[]> {
-  const res = await API.get("/users", {
+export async function fetchUsers(){
+  const res = await API.get<User[]>("/users", {
     params: {
       searchQuery: "Hieu",
     },
