@@ -12,9 +12,6 @@ import {
 import { FcGoogle } from "react-icons/fc";
 import { ImFacebook2, ImGithub } from "react-icons/im";
 
-
-
-
 export default function Login() {
   return (
     <Flex align={"center"} justify={"center"} minH={"100vh"} direction="column">

@@ -11,7 +11,7 @@ export default function useUser(): [
     setCustomUserSession(session)
   }, [session])
   return [
-    customUserSession as CustomUserSession,
-    setCustomUserSession as Dispatch<SetStateAction<CustomUserSession>>,
+    customUserSession,
+    setCustomUserSession
   ];
 }

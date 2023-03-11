@@ -1,4 +1,6 @@
-import { Flex, Heading, Box, Image, Spacer } from "@chakra-ui/react";
+import { Flex, Heading,Image} from "@chakra-ui/react";
+
+
 
 export default function Loading() {
   return (
@@ -13,7 +15,6 @@ export default function Loading() {
       <Heading textColor="#D8DEE9" mt="40px">
         Loading...
       </Heading>
-      ;
     </Flex>
   );
 }

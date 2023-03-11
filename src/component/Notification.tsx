@@ -1,4 +1,3 @@
-import { UserContext } from "@/context/UserContext";
 import {
   Button,
   Popover,
@@ -17,7 +16,6 @@ import {
   Heading,
 } from "@chakra-ui/react";
 
-import { useContext } from "react";
 import { IoNotificationsSharp } from "react-icons/io5";
 
 function EventCard({ name }: { name: string }) {
@@ -30,7 +28,8 @@ function EventCard({ name }: { name: string }) {
       <CardHeader>
         <Avatar name={name} bg="purple" textColor="#D8DEE9"></Avatar>
       </CardHeader>
-      <CardBody>
+    <CardBody
+    >
         <Text
           fontWeight="semibold"
           textColor="#D8DEE9"
@@ -39,13 +38,12 @@ function EventCard({ name }: { name: string }) {
           Contrary to popular belief, Lorem Ipsum is not simply random text. It
           has roots in a piece of classical Latin literature from 45 BC
         </Text>
-      </CardBody>
-    </Card>
+    </CardBody>
+  </Card>
   );
 }
 
 export default function Notification() {
-  const session = useContext(UserContext);
   return (
     <Popover>
       <PopoverTrigger>
@@ -69,12 +67,13 @@ export default function Notification() {
           <Heading as="h3" size="md" textColor="#D8DEE9">
             Events
           </Heading>
+          
         </PopoverHeader>
         <PopoverArrow />
         <PopoverCloseButton />
         <PopoverBody>
           <Stack>
-            {["Hieu", "Abe", "Thing"].map((name, idx) => {
+            {["Hieu", "Abe", "Thing"].map((name) => {
               return <EventCard name={name} key={name}></EventCard>;
             })}
           </Stack>

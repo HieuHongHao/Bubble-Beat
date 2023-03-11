@@ -2,10 +2,10 @@ import { Grid, GridItem, Spacer} from "@chakra-ui/react";
 import NavBar from "@/component/NavBar";
 import SideBar from "@/component/SideBar";
 import Song from "@/component/Song";
-
-
+import {useState } from "react";
 
 export default function Dashboard() {
+  const [time, setTime] = useState(0);
   return (
     <Grid
       templateRows="repeat(10, 1fr)"
@@ -23,7 +23,7 @@ export default function Dashboard() {
       >
         <SideBar />
       </GridItem>
-      <GridItem rowSpan={1} colSpan={3}/>
+      <GridItem rowSpan={1} colSpan={3} />
       <GridItem
         rowSpan={1}
         colSpan={1}
@@ -35,7 +35,7 @@ export default function Dashboard() {
         <Spacer />
         <NavBar />
       </GridItem>
-      <GridItem
+    <GridItem
         rowSpan={10}
         colSpan={4}
         bg="#3B4252"
@@ -51,5 +51,3 @@ export default function Dashboard() {
     </Grid>
   );
 }
-
-
