@@ -24,7 +24,7 @@
     "eslint-config-next": "13.1.5",
     "framer-motion": "^8.5.2",
     "next": "13.1.5",
-    "next-auth": "^4.18.10",
+    "next-auth": "^4.20.1",
     "pusher": "^5.1.2",
     "pusher-js": "^8.0.1",
     "react": "18.2.0",
